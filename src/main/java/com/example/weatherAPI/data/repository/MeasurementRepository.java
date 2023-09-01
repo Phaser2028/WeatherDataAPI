@@ -1,14 +1,15 @@
-package com.example.WeatherDataAPI.repositories;
+package com.example.weatherAPI.data.repository;
 
-import com.example.WeatherDataAPI.models.Measurement;
-import com.example.WeatherDataAPI.models.Sensor;
+import com.example.weatherAPI.data.model.Measurement;
+import com.example.weatherAPI.data.model.Sensor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+
 public interface MeasurementRepository extends JpaRepository<Measurement, Integer> {
     List<Measurement> findBySensor(Sensor sensor);
+
+    List<Measurement> findBySensorName(String name);
 
 }
